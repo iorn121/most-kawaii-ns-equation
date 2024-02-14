@@ -1,24 +1,34 @@
 "use client";
-import { useState } from "react";
-import { redirect } from "next/navigation";
-import Candidate from "./component/candidate";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Candidate, { CandidateProps } from "./components/candidate";
 
 export default function Page() {
-  const [votes, setVotes] = useState([]);
-  const vote = async (item: string) => {
-    const response = await fetch(`/api/vote?item=test`, { method: "GET" });
-    redirect(`/result/`);
-  };
+  const [voted, setVoted] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem("voted")) {
+      router.push("/result");
+    }
+  }, []);
 
   return (
     <main>
-      <header className="bg-emerald-400 text-center text-white py-4 text-3xl mb-2">
-        Most Kawaii N-S Equation
-      </header>
-      <Candidate />
-      <Candidate />
-      <Candidate />
-      <Candidate />
+      <p className="text-center text-2xl mb-4 font-handlee">
+        Vote for the most kawaii N-S equation!
+      </p>
+      <div className="mb-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+          <Candidate font="notojp" display_result={false} />
+          <Candidate font="mplus" display_result={false} />
+          <Candidate font="nanum" display_result={false} />
+          <Candidate font="nanumgo" display_result={false} />
+          <Candidate font="eb" display_result={false} />
+          <Candidate font="notosjp" display_result={false} />
+          <Candidate font="mplus1" display_result={false} />
+        </div>
+      </div>
     </main>
   );
 }

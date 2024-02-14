@@ -1,4 +1,14 @@
 import "./globals.css";
+import {
+  notojp,
+  notosjp,
+  eb,
+  mplus,
+  mplus1,
+  nanum,
+  nanumgo,
+  handlee,
+} from "./fonts";
 
 export const metadata = {
   title: "Next.js",
@@ -11,8 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${handlee.variable} ${notojp.variable} ${notosjp.variable} ${eb.variable} ${mplus.variable} ${mplus1.variable} ${nanum.variable} ${nanumgo.variable}`}
+    >
+      <body>
+        <header className="bg-emerald-400 text-center text-white py-4 text-3xl mb-2 font-handlee">
+          Most Kawaii N-S Equation
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

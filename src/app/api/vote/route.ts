@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error }, { status: 500 });
   }
 
-  const result = await sql`SELECT * FROM Votes;`;
-  const data = result.rows;
-  return NextResponse.json({ data }, { status: 200 });
+  const result = await sql`SELECT * FROM Votes WHERE Item=${item};`;
+  const count = result.rows[0].count;
+  return NextResponse.json({ count }, { status: 200 });
 }
