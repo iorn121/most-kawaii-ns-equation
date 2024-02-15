@@ -26,7 +26,7 @@ export default function RootLayout({
       className={`${handlee.variable} ${notojp.variable} ${notosjp.variable} ${eb.variable} ${mplus.variable} ${mplus1.variable} ${nanum.variable} ${nanumgo.variable}`}
     >
       <body>
-        <header className="bg-emerald-400 text-center text-white py-4 text-3xl mb-2 font-handlee">
+        <header className="bg-emerald-400 text-center text-white py-4 text-3xl mb-4 font-handlee">
           Most Kawaii N-S Equation
         </header>
         {children}
