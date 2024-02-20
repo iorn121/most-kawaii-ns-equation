@@ -10,6 +10,7 @@ import {
 } from "next/font/google";
 
 export const handlee = Handlee({
+  preload: true,
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -17,12 +18,14 @@ export const handlee = Handlee({
 });
 
 export const notojp = Noto_Sans_JP({
+  preload: true,
   subsets: ["latin"],
   display: "swap",
   variable: "--font-notojp",
 });
 
 export const notosjp = Noto_Serif_JP({
+  preload: true,
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -30,12 +33,14 @@ export const notosjp = Noto_Serif_JP({
 });
 
 export const eb = EB_Garamond({
+  preload: true,
   subsets: ["latin"],
   display: "swap",
   variable: "--font-eb",
 });
 
 export const mplus = M_PLUS_Rounded_1c({
+  preload: true,
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -43,12 +48,14 @@ export const mplus = M_PLUS_Rounded_1c({
 });
 
 export const mplus1 = M_PLUS_1({
+  preload: true,
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mplus1",
 });
 
 export const nanum = Nanum_Myeongjo({
+  preload: true,
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -56,6 +63,7 @@ export const nanum = Nanum_Myeongjo({
 });
 
 export const nanumgo = Nanum_Gothic({
+  preload: true,
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
