@@ -21,7 +21,7 @@ export default function Page() {
         Vote for the most kawaii N-S equation!
       </p>
       <div className="mb-10">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4">
           <Candidate font="notosjp" display_result={false} />
           <Candidate font="notojp" display_result={false} />
           <Candidate font="mplus" display_result={false} />
