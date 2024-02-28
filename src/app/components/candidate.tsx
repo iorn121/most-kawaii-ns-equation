@@ -2,11 +2,32 @@
 import { useRouter } from "next/navigation";
 
 export interface CandidateProps {
-  font: string;
+  font: FontKey;
   vote_count?: number;
   rank?: number;
   display_result: boolean;
 }
+
+export type FontKey =
+  | "notosjp"
+  | "notojp"
+  | "mplus"
+  | "nanum"
+  | "nanumgo"
+  | "eb"
+  | "mplus1"
+  | "handlee";
+
+const fontNames: Record<FontKey, string> = {
+  notosjp: "Noto Serif JP",
+  notojp: "Noto Sans JP",
+  mplus: "M PLUS Rounded 1c",
+  nanum: "Nanum Myeongjo",
+  nanumgo: "Nanum Gothic",
+  eb: "EB Garamond",
+  mplus1: "M PLUS 1",
+  handlee: "Handlee",
+};
 
 export default function Candidate({
   font,
@@ -45,7 +66,7 @@ export default function Candidate({
           </div>
         ) : null}
         <h3 className="text-black text-2xl font-normal mb-4 text-emerald-400">
-          {font}
+          {fontNames[font]}
         </h3>
         <span className={`text-black md:text-lg text-xl ${fontName} mb-4`}>
           ∂v/∂t+(v・∇)v=-(1/ρ)∇p+μ(∇^2)v+F

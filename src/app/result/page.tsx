@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Candidate, { CandidateProps } from "../components/candidate";
+import Candidate, { FontKey } from "../components/candidate";
 import { useRouter } from "next/navigation";
 
 type Vote = {
   id: number;
-  item: string;
+  item: FontKey;
   count: number;
 };
 
