@@ -19,7 +19,7 @@ export default function Page() {
       [fontsCopy[i], fontsCopy[j]] = [fontsCopy[j], fontsCopy[i]];
     }
     setShuffledFonts(fontsCopy);
-  }, []);
+  }, [router]);
 
   return (
     <main>
@@ -32,8 +32,8 @@ export default function Page() {
       <VoteButton />
       <div className="mb-10 mr-2 ml-2">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-          {shuffledFonts.map((f) => (
-            <Candidate font={f as FontKey} is_result={false} />
+          {shuffledFonts.map((f, index) => (
+            <Candidate key={index} font={f as FontKey} is_result={false} />
           ))}
         </div>
       </div>

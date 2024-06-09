@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 export function VoteButton() {
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://most-kawaii-ns-equation.vercel.app");
   const text = encodeURIComponent(
     "一番かわいいナビエ・ストークス方程式に投票しよう！\n#MostKawaiiNSEquation\n"
   );
