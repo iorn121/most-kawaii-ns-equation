@@ -35,7 +35,6 @@ export default function Page() {
           {shuffledFonts.map((f) => (
             <Candidate font={f as FontKey} is_result={false} />
           ))}
-        </div>
       </div>
     </main>
   );

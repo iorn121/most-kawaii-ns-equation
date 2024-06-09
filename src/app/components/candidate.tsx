@@ -48,7 +48,7 @@ export default function Candidate({
         <h3 className="text-black text-2xl font-normal mb-4 text-emerald-400">
           {fontNames[font]}
         </h3>
-        <span className={`text-black text-xl ${fontName} mb-4`}>
+        <span className={`text-black md:text-lg text-xl ${fontName} mb-4`}>
           ∂v/∂t+(v・∇)v=-(1/ρ)∇p+μ(∇^2)v+F
         </span>
         {is_result ? (
