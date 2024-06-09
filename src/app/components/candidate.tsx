@@ -1,39 +1,19 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { fontNames, FontKey } from "../fonts";
 
-export interface CandidateProps {
+export type CandidateProps = {
   font: FontKey;
   vote_count?: number;
   rank?: number;
-  display_result: boolean;
-}
-
-export type FontKey =
-  | "notosjp"
-  | "notojp"
-  | "mplus"
-  | "nanum"
-  | "nanumgo"
-  | "eb"
-  | "mplus1"
-  | "handlee";
-
-const fontNames: Record<FontKey, string> = {
-  notosjp: "Noto Serif JP",
-  notojp: "Noto Sans JP",
-  mplus: "M PLUS Rounded 1c",
-  nanum: "Nanum Myeongjo",
-  nanumgo: "Nanum Gothic",
-  eb: "EB Garamond",
-  mplus1: "M PLUS 1",
-  handlee: "Handlee",
+  is_result: boolean;
 };
 
 export default function Candidate({
   font,
   vote_count,
   rank,
-  display_result,
+  is_result,
 }: CandidateProps) {
   const router = useRouter();
   const fontName = "font-" + font;
@@ -50,7 +30,7 @@ export default function Candidate({
   return (
     <div>
       <div className="w-full h-auto bg-white rounded-3xl shadow justify-center items-center flex flex-col p-4">
-        {display_result ? (
+        {is_result ? (
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold mb-2 ${
               rank === 1
@@ -71,10 +51,10 @@ export default function Candidate({
         <span className={`text-black text-xl ${fontName} mb-4`}>
           ∂v/∂t+(v・∇)v=-(1/ρ)∇p+μ(∇^2)v+F
         </span>
-        {display_result ? (
+        {is_result ? (
           <span className="text-black text-base font-normal">
-            {display_result ? `${rank}` : "?"}位{" "}
-            {display_result ? `${vote_count}` : "?"}票
+            {is_result ? `${rank}` : "?"}位 {is_result ? `${vote_count}` : "?"}
+            票
           </span>
         ) : (
           <button

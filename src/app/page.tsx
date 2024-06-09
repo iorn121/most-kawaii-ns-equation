@@ -1,15 +1,23 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Candidate, { CandidateProps } from "./components/candidate";
+import Candidate from "./components/candidate";
+import { fonts, FontKey } from "./fonts";
 
 export default function Page() {
   const router = useRouter();
+  const [shuffledFonts, setShuffledFonts] = useState<string[]>([]);
 
   useEffect(() => {
     if (localStorage.getItem("voted")) {
       router.push("/result");
     }
+    const fontsCopy = [...fonts];
+    for (let i = fontsCopy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [fontsCopy[i], fontsCopy[j]] = [fontsCopy[j], fontsCopy[i]];
+    }
+    setShuffledFonts(fontsCopy);
   }, []);
 
   return (
@@ -20,15 +28,11 @@ export default function Page() {
       <p className="text-center text-2xl mb-4 font-handlee">
         Vote for the most kawaii N-S equation!
       </p>
-      <div className="mb-10">
+      <div className="mb-10 mr-2 ml-2">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
-          <Candidate font="notosjp" display_result={false} />
-          <Candidate font="notojp" display_result={false} />
-          <Candidate font="mplus" display_result={false} />
-          <Candidate font="nanum" display_result={false} />
-          <Candidate font="nanumgo" display_result={false} />
-          <Candidate font="eb" display_result={false} />
-          <Candidate font="mplus1" display_result={false} />
+          {shuffledFonts.map((f) => (
+            <Candidate font={f as FontKey} is_result={false} />
+          ))}
         </div>
       </div>
     </main>

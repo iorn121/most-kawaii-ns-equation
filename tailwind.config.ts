@@ -23,6 +23,8 @@ const config: Config = {
         mplus1: ["var(--font-mplus1)"],
         nanum: ["var(--font-nanum)"],
         nanumgo: ["var(--font-nanumgo)"],
+        gothic: ["var(--font-gothic)"],
+        nanumbrush: ["var(--font-nanumbrush)"],
       },
     },
   },

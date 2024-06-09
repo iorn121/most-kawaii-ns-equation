@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Candidate, { FontKey } from "../components/candidate";
+import Candidate from "../components/candidate";
 import { useRouter } from "next/navigation";
+import { FontKey } from "../fonts";
 
 type Vote = {
   id: number;
@@ -50,7 +51,7 @@ export default function Page() {
               font={vote.item}
               rank={i + 1}
               vote_count={vote.count}
-              display_result={true}
+              is_result={true}
             />
           ))}
         </div>

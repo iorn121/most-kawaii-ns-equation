@@ -7,6 +7,8 @@ import {
   Nanum_Myeongjo,
   Nanum_Gothic,
   Handlee,
+  Gothic_A1,
+  Nanum_Brush_Script,
 } from "next/font/google";
 
 export const handlee = Handlee({
@@ -70,13 +72,56 @@ export const nanumgo = Nanum_Gothic({
   variable: "--font-nanumgo",
 });
 
+export const gothic = Gothic_A1({
+  preload: true,
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-gothic",
+});
+
+export const nanumbrush = Nanum_Brush_Script({
+  preload: true,
+  weight: ["400"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nanumbrush",
+});
+
 export const fonts = [
-  handlee,
-  notojp,
-  notosjp,
-  eb,
-  mplus,
-  mplus1,
-  nanum,
-  nanumgo,
+  "notosjp",
+  "notojp",
+  "mplus",
+  "nanum",
+  "nanumgo",
+  "eb",
+  "mplus1",
+  "gothic",
+  "nanumbrush",
+  "handlee",
 ];
+
+export type FontKey =
+  | "notosjp"
+  | "notojp"
+  | "mplus"
+  | "nanum"
+  | "nanumgo"
+  | "eb"
+  | "mplus1"
+  | "gothic"
+  | "nanumbrush"
+  | "handlee";
+
+export const fontNames = {
+  handlee: "Handlee",
+  notojp: "Noto Sans JP",
+  notosjp: "Noto Serif JP",
+  eb: "EB Garamond",
+  mplus: "M PLUS Rounded 1c",
+  mplus1: "M PLUS 1",
+  nanum: "Nanum Myeongjo",
+  nanumgo: "Nanum Gothic",
+  gothic: "Gothic A1",
+  nanumbrush: "Nanum Brush Script",
+};
