@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Candidate from "./components/candidate";
 import { fonts, FontKey } from "./fonts";
+import { VoteButton } from "./share/voteButton";
 
 export default function Page() {
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function Page() {
       <p className="text-center text-2xl mb-4 font-handlee">
         Vote for the most kawaii N-S equation!
       </p>
+      <VoteButton />
       <div className="mb-10 mr-2 ml-2">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
           {shuffledFonts.map((f) => (

@@ -8,7 +8,6 @@ import {
   Nanum_Gothic,
   Handlee,
   Gothic_A1,
-  Nanum_Brush_Script,
 } from "next/font/google";
 
 export const handlee = Handlee({
@@ -80,14 +79,6 @@ export const gothic = Gothic_A1({
   variable: "--font-gothic",
 });
 
-export const nanumbrush = Nanum_Brush_Script({
-  preload: true,
-  weight: ["400"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-nanumbrush",
-});
-
 export const fonts = [
   "notosjp",
   "notojp",
@@ -97,7 +88,6 @@ export const fonts = [
   "eb",
   "mplus1",
   "gothic",
-  "nanumbrush",
   "handlee",
 ];
 
@@ -110,7 +100,6 @@ export type FontKey =
   | "eb"
   | "mplus1"
   | "gothic"
-  | "nanumbrush"
   | "handlee";
 
 export const fontNames = {
@@ -123,5 +112,4 @@ export const fontNames = {
   nanum: "Nanum Myeongjo",
   nanumgo: "Nanum Gothic",
   gothic: "Gothic A1",
-  nanumbrush: "Nanum Brush Script",
 };

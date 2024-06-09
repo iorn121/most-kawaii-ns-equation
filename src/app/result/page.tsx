@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Candidate from "../components/candidate";
 import { useRouter } from "next/navigation";
 import { FontKey } from "../fonts";
+import { ResultButton } from "../share/resultButton";
 
 type Vote = {
   id: number;
@@ -38,12 +39,7 @@ export default function Page() {
       <p className="text-center text-2xl mb-4 font-handlee">
         Result for the most kawaii N-S equation!
       </p>
-      <button
-        className="w-20 h-8 text-center text-white text-center bg-emerald-400 rounded-3xl font-handlee my-4"
-        onClick={() => back_to_vote()}
-      >
-        Refresh
-      </button>
+      <ResultButton />
       <div className="mb-10">
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-8 mx-4">
           {votes.map((vote, i) => (

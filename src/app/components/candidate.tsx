@@ -39,7 +39,7 @@ export default function Candidate({
                 ? "bg-gray-300"
                 : rank === 3
                 ? "bg-yellow-600"
-                : "bg-gray-400"
+                : "bg-gray-600"
             }`}
           >
             {rank}
