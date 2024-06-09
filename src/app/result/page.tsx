@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Candidate from "../components/candidate";
-import { useRouter } from "next/navigation";
 import { FontKey } from "../fonts";
 import { ResultButton } from "../share/resultButton";
 
@@ -13,7 +12,6 @@ type Vote = {
 
 export default function Page() {
   const [votes, setVotes] = useState<Vote[]>([]);
-  const router = useRouter();
 
   const get_votes = async () => {
     const response = await fetch(`/api/get_votes`, {
@@ -23,11 +21,6 @@ export default function Page() {
       const data = await response.json();
       setVotes(data.result);
     }
-  };
-
-  const back_to_vote = () => {
-    localStorage.removeItem("voted");
-    router.push("/");
   };
 
   useEffect(() => {
@@ -46,6 +39,7 @@ export default function Page() {
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-8 mx-4">
           {votes.map((vote, i) => (
             <Candidate
+              key={vote.id}
               font={vote.item}
               rank={i + 1}
               vote_count={vote.count}
